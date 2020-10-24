@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>EMS_jQuery</title>
+<script src="./lib/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+     let i = 1;
+        $("#btnAdd").click(function () {
+            let newHtml = GetHtml().replace("$[Id]", i++).replace("$[Name]", $("#txtname").val()).replace("$[Address]", $("#txtAddress").val()).replace("$[action]", "Edit").replace("$[Delete]", "Delete");
+            $("#table_td").append(newHtml);
+         });
+ });
+
+ function GetHtml() {
+    return "<tr><td class='Id'>$[Id]</td>"
+     + "<td class='Name'>$[Name]</td>"
+    + "<td class='Address'>$[Address]</td></tr>";
+}
+
+</script>
+</head>
+<body>
+<form id="form1">
+<table class='table table-bordered' id='UserInfo' >
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Address</th>
+ </tr>
+    <tbody id="table_td"></tbody>
+     </table>
+     <h3>
+    Add Employee Details 
+    </h3>
+    <table class='table table-bordered' id='Add' >
+    <tr>
+    <th>Id</th>
+     <th>Name</th>
+     <th>Address</th>
+     </tr>
+     <tr>
+    <td><input type="text" id="txtId" style="display: none" readonly name="ID" value="" /></td>
+    <td><input type="text" id="txtname" name="name" value="" />
+    </td><td>
+     <input type="text" id="txtAddress" name="Address" value="" />
+     </td>
+     </tr>
+     </table>
+    <input type="button" id="btnAdd" style="display: block" value="Add" />
+    <br />
+     <div id="output"></div>
+</form>
+</body>
+</html>
