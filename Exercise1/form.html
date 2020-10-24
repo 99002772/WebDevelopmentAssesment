@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+
+    <script>
+        function result(){
+            innerHTML = "";
+            let register = [];
+            register += document.getElementById(name).value;
+            register += document.getElementById(email).value;
+            register += document.getElementById(checkin).value;
+            register += document.getElementById(phone).value;
+            register += document.getElementById(room).value; 
+
+            for (let index = 0; index < register.length; index++) {
+                     list.innerHTML += "<li>" + register[index] +"</li>"
+           
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <section>
+        <form>
+            <p>Enter the Name:<br/><input type="text" placeholder="Enter the Name" id="name" /></p>
+            <p>Enter the Email:<br/><input type="email" placeholder="Enter the Email" id="email" /></p>
+            <p>Enter the Date Of Checkin:<br/><input type="date" placeholder="Enter the Date of Checkin" id="doc" /></p>
+            <p>Enter the Phone Number:<br/><input type="tel" placeholder="Enter the Phone No" id="phone" /></p>
+            <p>Select the Room:<br/>
+                <select id ="room">
+                    <option>Single</option>
+                    <option>Double</option>
+                    <option>Delex</option>
+                    <option>Suite</option>
+                </select>
+            </p>
+           
+            <p>
+                Food Type:<br/> <input type="radio" name="veg">Vegetarian <input type="radio" name="non-veg">Non-Vegetarian <input type="radio" name="Both">Both</p>
+            </p>
+            <p>
+                Other facilities:<br/>
+                <input type="checkbox">Swimming Pool
+                <input type="checkbox">Gym
+                <input type="checkbox">Restaurant
+            </p>
+            <button type="button" onclick="result()">Register</button>
+
+            <ul id="list"></ul>
+        </form>
+    </section>
+</body>
+</html>
